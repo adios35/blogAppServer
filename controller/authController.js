@@ -84,8 +84,7 @@ export async function login(req, res) {
       }
     );
     res.cookie("refreshToken", refreshToken, {
-      httpOnly: true,
-      maxAge: 60 * 60 * 24 * 1000,
+      maxAge: 7 * 60 * 60 * 24 * 1000,
     });
     await client.user.update({
       where: { email },
